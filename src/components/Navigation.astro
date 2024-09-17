@@ -1,0 +1,59 @@
+---
+---
+<div class="nav-links">
+    <a href="/">Inicio</a>
+    <a href="/blog">Blog</a>
+</div>
+<style>
+    .nav-links {
+        width: 150px;
+        top: 6rem;
+        background-color: #f8f8f8;
+        display: none;
+        margin: 10px;
+        border-radius: 5px; /* Añadido para bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadido para sombra sutil */
+    }
+
+    .nav-links a {
+        color: #493394;
+        display: flex;
+        align-items: center; /* Centra el texto verticalmente */
+        justify-content: center; /* Centra el texto horizontalmente */
+        padding: 10px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s, color 0.3s; /* Transición suave para hover */
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: #8f76ff;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .expanded {
+        display: block; /* Ajustado a block para una visualización correcta */
+    }
+
+    @media screen and (min-width: 800px) {
+        .nav-links {
+            margin-left: 5em;
+            display: block;
+            position: static;
+            width: auto;
+            background: none;
+            box-shadow: none; /* Elimina la sombra en pantallas grandes */
+        }
+
+        .nav-links a {
+            display: inline-block;
+            padding: 15px 20px;
+            margin: 0; /* Elimina margen extra */
+            text-align: center; /* Centra el texto en elementos inline-block */
+        }
+    }
+</style>
