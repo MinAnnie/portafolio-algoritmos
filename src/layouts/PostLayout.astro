@@ -8,7 +8,6 @@ const {frontmatter} = Astro.props;
             <div class="post-content">
                 <a class="back-btn" href="/blog/">Lista de blogs</a>
                 <p><em>{frontmatter.description}</em></p>
-                <p>Publicado el: {frontmatter.pubDate.toString().slice(0, 10)}</p>
 
                 <p>Escrito por: {frontmatter.author}</p>
 
