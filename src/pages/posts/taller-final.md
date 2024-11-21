@@ -38,11 +38,14 @@ using namespace std;
 
 int main() {
     double atencionTotal = 0, calidadTotal = 0, precioTotal = 0, ambienteTotal = 0;
-
     double atencion, calidad, precio, ambiente;
+    int clienteCount = 0;
+    char continuar;
 
-    for (int i = 1; i <= 5; i++) {
-        cout << "Cliente " << i << ":\n";
+    cout << "Ingrese calificaciones para cada cliente. Al finalizar cada cliente, se le preguntará si desea continuar.\n";
+
+    do {
+        cout << "Cliente " << (clienteCount + 1) << ":\n";
 
         do {
             cout << "Califique Atención de los empleados (1-10): ";
@@ -68,13 +71,23 @@ int main() {
         } while (ambiente < 1 || ambiente > 10);
         ambienteTotal += ambiente;
 
+        clienteCount++;
+
+        cout << "¿Desea ingresar calificaciones para otro cliente? (s/n): ";
+        cin >> continuar;
         cout << endl;
+
+    } while (continuar == 's' || continuar == 'S' && clienteCount <= 5);
+
+    if (clienteCount == 0) {
+        cout << "No se ingresaron datos.\n";
+        return 0;
     }
 
-    double promedioAtencion = atencionTotal / 5;
-    double promedioCalidad = calidadTotal / 5;
-    double promedioPrecio = precioTotal / 5;
-    double promedioAmbiente = ambienteTotal / 5;
+    double promedioAtencion = atencionTotal / clienteCount;
+    double promedioCalidad = calidadTotal / clienteCount;
+    double promedioPrecio = precioTotal / clienteCount;
+    double promedioAmbiente = ambienteTotal / clienteCount;
 
     string aspecto1 = "Atención de los empleados";
     string aspecto2 = "Calidad de la comida";
