@@ -123,8 +123,4 @@ int main() {
 **Resultado esperado**
 Después de ejecutar el algoritmo, se mostrará una lista ordenada de los aspectos evaluados, indicando los promedios de
 calificación de mejor a peor. Esto ayudará al dueño del restaurante a identificar las áreas que necesita mejorar.
-
-----
-**Vídeo**
-
 ----
